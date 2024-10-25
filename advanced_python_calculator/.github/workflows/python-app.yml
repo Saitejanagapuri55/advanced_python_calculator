@@ -1,10 +1,16 @@
 name: Python application
 
-on: [push, pull_request]
+# Define the events that will trigger the workflow
+on:
+  push:
+    branches:
+      - advanced-calculator  # Replace with your default branch name if different
+  pull_request:
+    branches:
+      - advanced-calculator  # Replace with your default branch name if different
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
