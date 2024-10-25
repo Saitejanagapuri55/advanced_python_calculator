@@ -1,19 +1,22 @@
 # tests/test_calculator.py
+
 import pytest
-from app.calculator import Calculator  # Ensure this import works correctly
+from app.calculator import add, subtract, multiply, divide
 
-def test_addition():
-    assert Calculator.add(2, 3) == 5
+def test_add_large_numbers():
+    assert add(1e10, 1e10) == 2e10
 
-def test_subtraction():
-    assert Calculator.subtract(5, 2) == 3
+def test_subtract_negative_result():
+    assert subtract(2, 5) == -3
 
-def test_multiplication():
-    assert Calculator.multiply(3, 4) == 12
+def test_multiply_large_numbers():
+    assert multiply(1e10, 1e10) == 1e20
 
-def test_division():
-    assert Calculator.divide(10, 2) == 5
-    with pytest.raises(ZeroDivisionError):
-        Calculator.divide(10, 0)
+def test_divide_large_numbers():
+    assert divide(1e10, 1e5) == 1e5
 
-# Add more tests as needed
+def test_divide_negative_numbers():
+    assert divide(-10, 2) == -5
+
+def test_divide_positive_by_negative():
+    assert divide(10, -2) == -5

@@ -1,32 +1,15 @@
-# In app/calculator.py
+# app/calculator.py
 
-"""
-This module provides basic arithmetic operations.
-"""
+def add(x, y):
+    return x + y
 
-class Calculator:
-    """
-    A simple calculator class.
-    """
+def subtract(x, y):
+    return x - y
 
-    @staticmethod
-    def add(a, b):
-        """Return the sum of a and b."""
-        return a + b
+def multiply(x, y):
+    return x * y
 
-    @staticmethod
-    def subtract(a, b):
-        """Return the difference of a and b."""
-        return a - b
-
-    @staticmethod
-    def multiply(a, b):
-        """Return the product of a and b."""
-        return a * b
-
-    @staticmethod
-    def divide(a, b):
-        """Return the quotient of a and b. Raises ZeroDivisionError if b is zero."""
-        if b == 0:
-            raise ZeroDivisionError("Cannot divide by zero.")
-        return a / b
+def divide(x, y):
+    if y == 0:
+        raise ValueError("Cannot divide by zero")
+    return x / y

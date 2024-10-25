@@ -1,22 +1,14 @@
-import importlib
-import os
+# tests/test_plugin_manager.py
+import pytest
+from app.plugin_manager import PluginManager  # Ensure this is the correct class
 
-class PluginManager:
-    def __init__(self):
-        self.plugins = {}
+def test_load_plugin():
+    plugin_manager = PluginManager()
+    plugin_manager.load_plugin("example_plugin")  # Adjust as per your plugin implementation
+    assert plugin_manager.is_plugin_loaded("example_plugin") is True
 
-    def load_plugins(self):
-        for filename in os.listdir("plugins"):
-            if filename.endswith("_plugin.py"):
-                plugin_name = filename[:-3]
-                module = importlib.import_module(f"plugins.{plugin_name}")
-                self.plugins[plugin_name] = module.Plugin()
-
-    def get_plugin_commands(self):
-        return {name: plugin for name, plugin in self.plugins.items()}
-
-    def execute_plugin_command(self, command_name, *args):
-        plugin = self.plugins.get(command_name)
-        if plugin:
-            return plugin.execute(*args)
-        return None
+def test_unload_plugin():
+    plugin_manager = PluginManager()
+    plugin_manager.load_plugin("example_plugin")
+    plugin_manager.unload_plugin("example_plugin")
+    assert plugin_manager.is_plugin_loaded("example_plugin") is False
