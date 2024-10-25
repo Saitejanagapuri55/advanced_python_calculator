@@ -1,17 +1,49 @@
 # Advanced Python Calculator
 
-## Project Overview
-This is an advanced Python-based calculator application that incorporates professional software development practices, including design patterns, logging, environment variables, and more.
+This project is an advanced calculator application developed in Python, featuring various mathematical operations and a plugin system for extending functionality. The calculator supports operations such as addition, subtraction, multiplication, and division, along with a history manager to keep track of calculations.
 
 ## Features
-- REPL command-line interface for real-time interaction.
-- Basic arithmetic operations: Add, Subtract, Multiply, Divide.
-- Plugin system for extending functionality.
-- Calculation history management using Pandas.
-- Comprehensive logging.
 
-## Setup Instructions
-1. Clone the repository.
-2. Install dependencies:
+- **Basic Operations**: Supports addition, subtraction, multiplication, and division.
+- **Plugin System**: Extendable architecture to add new operations easily.
+- **History Management**: Keeps track of past calculations.
+- **Unit Testing**: Comprehensive test suite using `pytest` to ensure code quality.
+- **Code Quality**: Uses `pylint` for linting to maintain high code standards.
+
+## Installation
+
+1. Clone the repository:
    ```bash
-   pip
+   git clone https://github.com/Saitejanagapuri55/advanced_python_calculator.git
+   cd advanced_python_calculator
+Set up a virtual environment:
+
+bash
+Copy code
+python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install the required dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Usage
+Run the calculator in your terminal:
+
+bash
+Copy code
+python main.py
+Follow the on-screen instructions to perform calculations.
+
+Running Tests
+To run the test suite, execute:
+
+bash
+Copy code
+pytest tests
+Code Quality Checks
+To check code quality with pylint, run:
+
+bash
+Copy code
+pylint app
