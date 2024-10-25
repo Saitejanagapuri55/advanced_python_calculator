@@ -16,34 +16,24 @@ This project is an advanced calculator application developed in Python, featurin
    ```bash
    git clone https://github.com/Saitejanagapuri55/advanced_python_calculator.git
    cd advanced_python_calculator
-Set up a virtual environment:
 
-bash
-Copy code
+# Set up a virtual environment:
 python3 -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install the required dependencies:
 
-bash
-Copy code
+# Install the required dependencies:
 pip install -r requirements.txt
-Usage
-Run the calculator in your terminal:
 
-bash
-Copy code
+
+# Usage
+## Run the calculator in your terminal:
 python main.py
 Follow the on-screen instructions to perform calculations.
 
-Running Tests
+## Running Tests
 To run the test suite, execute:
-
-bash
-Copy code
 pytest tests
-Code Quality Checks
-To check code quality with pylint, run:
 
-bash
-Copy code
+## Code Quality Checks
+To check code quality with pylint, run:
 pylint app
