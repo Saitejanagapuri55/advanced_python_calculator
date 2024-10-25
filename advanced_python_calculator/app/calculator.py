@@ -1,31 +1,32 @@
-# app/calculator.py
+# In app/calculator.py
 
-from app.history_manager import HistoryManager
+"""
+This module provides basic arithmetic operations.
+"""
 
 class Calculator:
-    def __init__(self):
-        super().__init__()
-        self.history_manager = HistoryManager()
-        self.history_manager.load_history()  # Load history on initialization
+    """
+    A simple calculator class.
+    """
 
-    def add(self, a, b):
-        result = a + b
-        self.history_manager.add_to_history(f"Add: {a} + {b} = {result}")
-        return result
+    @staticmethod
+    def add(a, b):
+        """Return the sum of a and b."""
+        return a + b
 
-    def subtract(self, a, b):
-        result = a - b
-        self.history_manager.add_to_history(f"Subtract: {a} - {b} = {result}")
-        return result
+    @staticmethod
+    def subtract(a, b):
+        """Return the difference of a and b."""
+        return a - b
 
-    def multiply(self, a, b):
-        result = a * b
-        self.history_manager.add_to_history(f"Multiply: {a} * {b} = {result}")
-        return result
+    @staticmethod
+    def multiply(a, b):
+        """Return the product of a and b."""
+        return a * b
 
-    def divide(self, a, b):
+    @staticmethod
+    def divide(a, b):
+        """Return the quotient of a and b. Raises ZeroDivisionError if b is zero."""
         if b == 0:
-            raise ValueError("Cannot divide by zero.")
-        result = a / b
-        self.history_manager.add_to_history(f"Divide: {a} / {b} = {result}")
-        return result
+            raise ZeroDivisionError("Cannot divide by zero.")
+        return a / b
