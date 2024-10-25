@@ -32,8 +32,11 @@ Follow the on-screen instructions to perform calculations.
 
 ## Running Tests
 To run the test suite, execute:
+
 pytest tests
 
 ## Code Quality Checks
 To check code quality with pylint, run:
+
+
 pylint app
