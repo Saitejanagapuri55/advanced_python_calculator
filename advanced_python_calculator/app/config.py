@@ -1,9 +1,17 @@
+# app/config.py
+
+import json
 import os
-from dotenv import load_dotenv
 
-# Load environment variables from a .env file
-load_dotenv()
+def load_config(filepath='config.json'):
+    """Load configuration settings from a JSON file."""
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"Configuration file '{filepath}' not found.")
+    with open(filepath, 'r') as file:
+        return json.load(file)
 
-# Example of accessing environment variables
-API_KEY = os.getenv("API_KEY")  # Replace with your actual variable names
-DB_URL = os.getenv("DB_URL")    # Replace with your actual variable names
+# Example content of config.json
+# {
+#     "setting1": "value1",
+#     "setting2": "value2"
+# }

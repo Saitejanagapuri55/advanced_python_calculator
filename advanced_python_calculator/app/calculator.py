@@ -1,49 +1,55 @@
 # app/calculator.py
 
+import argparse
 from app.history_manager import log_operation
 
-def add(a, b):
-    return a + b
+class Calculator:
+    """A simple calculator class to perform basic arithmetic operations."""
 
-def subtract(a, b):
-    return a - b
+    def add(self, a, b):
+        result = a + b
+        log_operation('add', a, b, result)
+        return result
 
-def multiply(a, b):
-    return a * b
+    def subtract(self, a, b):
+        result = a - b
+        log_operation('subtract', a, b, result)
+        return result
 
-def divide(a, b):
-    if b == 0:
-        raise ValueError("Cannot divide by zero.")
-    return a / b
+    def multiply(self, a, b):
+        result = a * b
+        log_operation('multiply', a, b, result)
+        return result
+
+    def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero.")
+        result = a / b
+        log_operation('divide', a, b, result)
+        return result
 
 def main():
-    print("Welcome to the Calculator!")
-    while True:
-        try:
-            operation = input("Enter operation (add, subtract, multiply, divide) or 'quit' to exit: ")
-            if operation == 'quit':
-                break
-            a = float(input("Enter first number: "))
-            b = float(input("Enter second number: "))
+    parser = argparse.ArgumentParser(description='Simple Calculator')
+    parser.add_argument('operation', choices=['add', 'subtract', 'multiply', 'divide'],
+                        help='The operation to perform')
+    parser.add_argument('a', type=float, help='First operand')
+    parser.add_argument('b', type=float, help='Second operand')
 
-            if operation == 'add':
-                result = add(a, b)
-            elif operation == 'subtract':
-                result = subtract(a, b)
-            elif operation == 'multiply':
-                result = multiply(a, b)
-            elif operation == 'divide':
-                result = divide(a, b)
-            else:
-                print("Invalid operation.")
-                continue
+    args = parser.parse_args()
 
-            print(f"Result: {result}")
-            # Log the operation
-            log_operation(operation, a, b, result)
+    calc = Calculator()
+    result = None
 
-        except ValueError as e:
-            print(f"Error: {e}")
+    if args.operation == 'add':
+        result = calc.add(args.a, args.b)
+    elif args.operation == 'subtract':
+        result = calc.subtract(args.a, args.b)
+    elif args.operation == 'multiply':
+        result = calc.multiply(args.a, args.b)
+    elif args.operation == 'divide':
+        result = calc.divide(args.a, args.b)
 
-if __name__ == "__main__":
+    print(f'The result of {args.operation} {args.a} and {args.b} is: {result}')
+
+if __name__ == '__main__':
     main()
