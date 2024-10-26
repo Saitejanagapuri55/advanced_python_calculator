@@ -1,8 +1,8 @@
-# app/plugins/add_plugin.py
+# app/plugins/divide_plugin.py
 
 from app.calculator import Calculator
 
-class AddPlugin:
+class DividePlugin:
     def execute(self, num1, num2):
         calculator = Calculator()
-        return calculator.add(num1, num2)
+        return calculator.divide(num1, num2)

@@ -1,17 +1,7 @@
-Addition of 3 and 4 = 7
-add: 5.0 and 5.0 = 10.0
-subtract: 2.0 and 2.0 = 0.0
-multiply: 1.0 and 2.0 = 2.0
-add: 3.0 and 3.0 = 6.0
-add(2, 3) = 5
-subtract(5, 2) = 3
-multiply(3, 4) = 12
-divide(10, 2) = 5.0
-add(2, 3) = 5
-subtract(5, 2) = 3
-multiply(3, 4) = 12
-divide(10, 2) = 5.0
-add(2, 3) = 5
-subtract(5, 2) = 3
-multiply(3, 4) = 12
-divide(10, 2) = 5.0
+Operation  Num1  Num2  Result,Operation,Num1,Num2,Result
+      add   2.0   3.0     5.0,,,,
+,add,2.0,3.0,5.0
+,multiply,6.0,5.0,30.0
+,divide,6.0,3.0,2.0
+,divide,6.0,3.0,2.0
+,multiply,6.0,5.0,30.0

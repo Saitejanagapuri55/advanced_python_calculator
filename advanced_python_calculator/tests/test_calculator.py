@@ -1,4 +1,5 @@
 # tests/test_calculator.py
+
 import pytest
 from app.calculator import Calculator
 

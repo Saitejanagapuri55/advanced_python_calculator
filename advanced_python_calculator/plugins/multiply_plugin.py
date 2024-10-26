@@ -1,8 +1,8 @@
-# app/plugins/add_plugin.py
+# app/plugins/multiply_plugin.py
 
 from app.calculator import Calculator
 
-class AddPlugin:
+class MultiplyPlugin:
     def execute(self, num1, num2):
         calculator = Calculator()
-        return calculator.add(num1, num2)
+        return calculator.multiply(num1, num2)
